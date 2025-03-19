@@ -1,0 +1,79 @@
+{
+  "count": 20,
+  "next": null,
+  "previous": "http://swapi/api/starships/?page=1",
+  "results": [
+    {
+      "name": "Slave 1",
+      "model": "Firespray-31-class patrol and attack",
+      "manufacturer": "Kuat Systems Engineering",
+      "cost_in_credits": "unknown",
+      "length": "21.5",
+      "max_atmosphering_speed": "1000",
+      "crew": "1",
+      "passengers": "6",
+      "cargo_capacity": "70000",
+      "consumables": "1 month",
+      "hyperdrive_rating": "3.0",
+      "MGLT": "70",
+      "starship_class": "Patrol craft",
+      "pilots": [
+        "https://swapi.dev/api/people/22/"
+      ],
+      "films": [
+        "https://swapi.dev/api/films/2/",
+        "https://swapi.dev/api/films/5/"
+      ],
+      "created": "2014-12-15T13:00:56.332000Z",
+      "edited": "2014-12-20T21:23:49.897000Z",
+      "url": "https://swapi.dev/api/starships/21/"
+    },
+    {
+      "name": "Death Star",
+      "model": "DS-1 Orbital Battle Station",
+      "manufacturer": "Imperial Department of Military Research, Sienar Fleet Systems",
+      "cost_in_credits": "1000000000000",
+      "length": "120000",
+      "max_atmosphering_speed": "n/a",
+      "crew": "342,953",
+      "passengers": "843,342",
+      "cargo_capacity": "1000000000000",
+      "consumables": "3 years",
+      "hyperdrive_rating": "4.0",
+      "MGLT": "10",
+      "starship_class": "Deep Space Mobile Battlestation",
+      "pilots": [],
+      "films": [
+        "https://swapi.dev/api/films/1/"
+      ],
+      "created": "2014-12-10T16:36:50.509000Z",
+      "edited": "2014-12-20T21:26:24.783000Z",
+      "url": "https://swapi.dev/api/starships/9/"
+    },
+    {
+      "name": "Naboo star skiff",
+      "model": "J-type star skiff",
+      "manufacturer": "Theed Palace Space Vessel Engineering Corps/Nubia Star Drives, Incorporated",
+      "cost_in_credits": "unknown",
+      "length": "29.2",
+      "max_atmosphering_speed": "1050",
+      "crew": "3",
+      "passengers": "3",
+      "cargo_capacity": "unknown",
+      "consumables": "unknown",
+      "hyperdrive_rating": "0.5",
+      "MGLT": "unknown",
+      "starship_class": "yacht",
+      "pilots": [
+        "https://swapi.dev/api/people/10/",
+        "https://swapi.dev/api/people/35/"
+      ],
+      "films": [
+        "https://swapi.dev/api/films/6/"
+      ],
+      "created": "2014-12-20T19:55:15.396000Z",
+      "edited": "2014-12-20T21:23:49.948000Z",
+      "url": "https://swapi.dev/api/starships/64/"
+    }
+  ]
+}
