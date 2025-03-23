@@ -1,0 +1,105 @@
+openapi: 3.0.4
+info:
+  title: Rescue Mission API
+  version: 1.0.0
+  description: API for managing rescue missions
+  contact:
+    name: Maximilien Chevalier
+    email: maximilien.chevalier@gmail.com
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+servers:
+  - url: http://localhost:8080
+    description: Local server
+tags:
+  - name: mission
+    description: Operations about missions
+  - name: rescuer
+    description: Operations about rescuers
+paths:
+  /rescue-fleets:
+    post:
+      tags:
+        - mission
+      summary: Create a new rescue fleet
+      operationId: createRescueFleet
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RescueFleetRequest'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FleetResource'
+  /rescue-fleets/{fleetId}:
+    get:
+      tags:
+        - mission
+      summary: Get a rescue fleet by ID
+      operationId: getRescueFleetById
+      parameters:
+        - name: fleetId
+          in: path
+          required: true
+          description: ID of the fleet to get
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FleetResource'
+        '404':
+          description: Not Found
+components:
+  schemas:
+    RescueFleetRequest:
+      type: object
+      description: Request to create a new rescue fleet
+      properties:
+        numberOfPassengers:
+          type: integer
+          format: int32
+          description: Number of passengers to rescue
+          example: 100
+    FleetResource:
+      type: object
+      description: A rescue fleet
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: ID of the fleet
+          example: 123e4567-e89b-12d3-a456-426614174000
+        starships:
+            type: array
+            description: List of starships in the fleet
+            items:
+              $ref: '#/components/schemas/StarshipResource'
+    StarshipResource:
+        type: object
+        description: A starship in a rescue fleet
+        properties:
+          name:
+            type: string
+            description: Name of the starship
+            example: Millennium Falcon
+          capacity:
+            type: integer
+            format: int32
+            description: Capacity of the starship
+            example: 6
+          passengersCapacity:
+            type: integer
+            format: int32
+            description: Number of passengers the starship can carry
+            example: 6

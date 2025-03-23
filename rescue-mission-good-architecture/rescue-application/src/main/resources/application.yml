@@ -1,0 +1,7 @@
+spring:
+  jackson:
+    default-property-inclusion: non_null
+
+logging.level:
+  moon.mission.rescue: INFO
+
