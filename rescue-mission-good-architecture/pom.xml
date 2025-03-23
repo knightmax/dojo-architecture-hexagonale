@@ -25,6 +25,7 @@
     <module>rescue-domain</module>
     <module>rescue-model</module>
     <module>fleets-inmemory</module>
+    <module>fleets-persistence</module>
     <module>starship-client-mock</module>
     <module>starship-model</module>
   </modules>

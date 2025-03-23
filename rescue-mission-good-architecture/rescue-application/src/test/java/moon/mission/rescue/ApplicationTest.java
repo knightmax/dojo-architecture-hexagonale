@@ -47,8 +47,8 @@ class ApplicationTest {
         Mockito.when(fleetsService.save(Mockito.any(Fleet.class)))
                 .thenAnswer(invocation -> invocation.getArgument(0));
 
-        Mockito.when(fleetsService.getById(Mockito.any(UUID.class)))
-                .thenReturn(new Fleet(UUID.randomUUID(), List.of(new StarShip("StarShip1", 1000, 100000L))));
+        Mockito.when(fleetsService.getById(Mockito.any(String.class)))
+                .thenReturn(new Fleet(UUID.randomUUID().toString(), List.of(new StarShip("StarShip1", 1000, 100000L))));
     }
 
     @Test
@@ -60,7 +60,7 @@ class ApplicationTest {
                 }
                 """;
 
-        mockMvc.perform(post("/rescue-fleets")
+        mockMvc.perform(post("/rescue-mission")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(request))
                 .andExpect(status().is(CREATED.value()))

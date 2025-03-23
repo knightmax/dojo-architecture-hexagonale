@@ -6,14 +6,13 @@ import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.UUID;
 
 @Service
 public class InMemoryFleetsService implements FleetsService {
-    private final Map<UUID, Fleet> fleets = new HashMap<>();
+    private final Map<String, Fleet> fleets = new HashMap<>();
 
     @Override
-    public Fleet getById(UUID id) {
+    public Fleet getById(String id) {
         return fleets.get(id);
     }
 

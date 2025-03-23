@@ -22,7 +22,7 @@ class InMemoryFleetsServiceTest {
 
     @Test
     void testSaveAndGetById() {
-        UUID fleetId = UUID.randomUUID();
+        String fleetId = UUID.randomUUID().toString();
         Fleet fleet = new Fleet(fleetId, List.of(new StarShip("Starship 1", 100, 1000L)));
 
         fleetsService.save(fleet);
@@ -33,7 +33,7 @@ class InMemoryFleetsServiceTest {
 
     @Test
     void testGetByIdNotFound() {
-        UUID fleetId = UUID.randomUUID();
+        String fleetId = UUID.randomUUID().toString();
         Fleet retrievedFleet = fleetsService.getById(fleetId);
 
         assertNull(retrievedFleet);

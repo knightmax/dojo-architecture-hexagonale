@@ -2,12 +2,11 @@ package moon.mission.rescue.application.adapter;
 
 import moon.mission.rescue.application.resource.FleetResource;
 import moon.mission.rescue.application.request.RescueFleetRequest;
+import moon.mission.rescue.domain.model.Fleet;
 import moon.mission.rescue.domain.service.FleetAssemblerService;
 import moon.mission.rescue.domain.service.FleetsService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.UUID;
 
 import static org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder.fromMethodCall;
 import static org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder.on;
@@ -16,7 +15,7 @@ import static org.springframework.web.servlet.mvc.method.annotation.MvcUriCompon
  * Service pour assembler une flotte de vaisseaux de sauvetage pour une mission de secours.
  */
 @RestController
-@RequestMapping("/rescue-fleets")
+@RequestMapping("/rescue-mission")
 public class RescueFleetController {
 
     private final FleetAssemblerService fleetAssemblerService;
@@ -47,7 +46,8 @@ public class RescueFleetController {
      * @return La flotte de vaisseaux de sauvetage
      */
     @GetMapping("/{id}")
-    public ResponseEntity<FleetResource> getFleetById(@PathVariable UUID id) {
-        return ResponseEntity.ok(new FleetResource(fleets.getById(id)));
+    public ResponseEntity<FleetResource> getFleetById(@PathVariable String id) {
+        Fleet fleet = fleets.getById(id);
+        return ResponseEntity.ok(new FleetResource(fleet));
     }
 }
