@@ -9,3 +9,7 @@ spring:
 
 logging.level:
   moon.mission.rescue: INFO
+
+starship:
+  inventory:
+    url: https://swapi.dev/api
