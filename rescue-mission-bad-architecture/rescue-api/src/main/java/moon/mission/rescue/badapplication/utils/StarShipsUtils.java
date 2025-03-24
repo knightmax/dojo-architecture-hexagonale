@@ -1,7 +1,7 @@
-package moon.mission.rescue.starship.utils;
+package moon.mission.rescue.badapplication.utils;
 
-import moon.mission.rescue.domain.model.StarShip;
-import moon.mission.rescue.starship.model.SwapiStarShip;
+import moon.mission.rescue.badapplication.client.SwapiStarShip;
+import moon.mission.rescue.badapplication.model.StarShip;
 
 import java.util.List;
 import java.util.function.Function;

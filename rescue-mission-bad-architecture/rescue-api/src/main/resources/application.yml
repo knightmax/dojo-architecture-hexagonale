@@ -1,0 +1,15 @@
+spring:
+  jackson:
+    default-property-inclusion: non_null
+  data:
+    mongodb:
+      uri: mongodb://root:root@localhost:27017/admin?directConnection=true&serverSelectionTimeoutMS=2000
+      auto-index-creation: true
+      uuid-representation: standard
+
+logging.level:
+  moon.mission.rescue: INFO
+
+starship:
+  inventory:
+    url: https://swapi.dev/api
