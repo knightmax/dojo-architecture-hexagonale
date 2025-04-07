@@ -82,6 +82,8 @@ Elle est adaptée aux systèmes complexes, pas nécessaire pour les petits proje
 
 L'application est conçue pour gérer efficacement les missions de sauvetage en assemblant et en gérant des flottes de vaisseaux spatiaux, tout en respectant les principes de conception modulaire et testable.
 
+NB : Le code est inspiré de ce qui est présenté dans [L'Architecture Hexagonale par la pratique, le live coding qui rendra vos applications plus pérennes - YouTube](https://www.youtube.com/watch?v=-dXN8wkN0yk).
+
 ### Fonctionnalités principales
 
 1. **Assembler une flotte de vaisseaux de sauvetage** :
