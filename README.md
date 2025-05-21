@@ -22,10 +22,10 @@ Dans ce dojo, nous allons voir comment mettre en place une architecture hexagona
 
 Les principes SOLID sont fondamentaux pour comprendre pourquoi une architecture hexagonale peut être utile :
 
-- Single Responsibility Principle : Un composant doit avoir une seule raison de changer, c'est à dire une seule responsabilité.
-- Open/Closed Principle : Un composant doit être ouvert à l'extension mais fermé à la modification, c'est à dire qu'on doit pouvoir ajouter des fonctionnalités sans modifier le code existant.
-- Liskov Substitution Principle : Les objets d'une classe dérivée doivent pouvoir remplacer les objets de la classe de base sans affecter le comportement du programme, c'est à dire que les sous-classes doivent être substituables à la classe de base.
-- Interface Segregation Principle : Les interfaces doivent être spécifiques aux besoins des clients, c'est à dire qu'on ne doit pas forcer les clients à implémenter des méthodes dont ils n'ont pas besoin.
+- Single Responsibility Principle : Un composant doit avoir une seule raison de changer, c'est-à-dire une seule responsabilité.
+- Open/Closed Principle : Un composant doit être ouvert à l'extension, mais fermé à la modification, c'est-à-dire qu'on doit pouvoir ajouter des fonctionnalités sans modifier le code existant.
+- Liskov Substitution Principle : Les objets d'une classe dérivée doivent pouvoir remplacer les objets de la classe de base sans affecter le comportement du programme, c'est-à-dire que les sous-classes doivent être substituables à la classe de base.
+- Interface Segregation Principle : Les interfaces doivent être spécifiques aux besoins des clients, c'est-à-dire qu'on ne doit pas forcer les clients à implémenter des méthodes dont ils n'ont pas besoin.
 - Dependency Inversion Principle : Les modules de haut niveau ne doivent pas dépendre des modules de bas niveau. Les deux doivent dépendre d'abstractions. Les détails doivent dépendre des abstractions.
 
 Ces principes et notamment le plus crucial, le principe d'inversion de dépendance, sont au coeur de l'architecture hexagonale.
@@ -62,21 +62,27 @@ Ce sont les interfaces qui définissent les moyens par lesquels l'application in
 
 ### Indépendance du Domaine
 
-Le domaine métier doit être complètement indépendant des technologies utilisées (par exemple, la base de données ou le framework web). Les dépendances sont inversées (par exemple, la base de données dépend de la logique métier, et non l'inverse).
+Le domaine métier doit être complètement indépendant des technologies utilisées (par exemple, la base de données ou le framework web). Les dépendances sont inversées (par exemple, la base de données dépend de la logique métier, et non l'inverse). On retrouve ce qui est préconisé par le principe SOLID 
+
+> Dependency Inversion Principle : Le domaine métier ne dépend pas des détails techniques (base de données, framework), mais d’abstractions. Les dépendances sont inversées pour garantir l’autonomie du cœur métier.
 
 ### Facilité d'Extension
 
 L'un des grands avantages de l'architecture hexagonale est la possibilité de changer les adaptateurs sans toucher au cœur de l'application. Par exemple, remplacer un système de persistance relationnel par une solution NoSQL est possible en changeant uniquement l'adaptateur correspondant.
 
+> Open/Closed Principle : On peut ajouter ou remplacer des adaptateurs (ex : changer la persistance) sans modifier le domaine métier. Le système est ouvert à l’extension, fermé à la modification.
+
 ### Testabilité et Flexibilité
 
 Étant donné que le domaine métier est indépendant, il devient facile de tester la logique métier avec des mockups ou des stubs pour les interactions externes.
+
+> Single Responsibility Principle et Interface Segregation Principle : Le domaine métier a une seule responsabilité (la logique métier), ce qui facilite les tests. Les interfaces sont spécifiques, permettant de mocker facilement les dépendances externes.
 
 ### Synthèse
 
 L'architecture hexagonale est une approche modulaire et flexible qui améliore la testabilité, la maintenabilité et l'évolutivité.
 
-Elle est adaptée aux systèmes complexes, pas nécessaire pour les petits projets..
+Elle est adaptée aux systèmes complexes, pas nécessaire pour les petits projets.
 
 ## Première étape : Découpage de l'application
 
@@ -144,7 +150,7 @@ NB : Le code est inspiré de ce qui est présenté dans [L'Architecture Hexagona
     - `FleetService` : Gère les flottes.
     - `StarShipInventoryService` : Gère l'inventaire des vaisseaux spatiaux.
 
-3. **`starship-cliient-api`** : Domaine Externe
+3. **`starship-client-api`** : Domaine Externe
     - `StarShipInventoryApi` : Client pour l'API externe de vaisseaux spatiaux.
     - `SwapiResponse` : Réponse de l'API externe.
     - `SwapiStarShip` : Modèle de vaisseau spatial de l'API externe.
