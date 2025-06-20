@@ -21,6 +21,7 @@ public class HexagonalArchitectureTest {
             .layer("Fleet Adapter").definedBy("moon.mission.rescue.fleet..")
             .layer("StarShip Adapter").definedBy("moon.mission.rescue.starship..")
             .whereLayer("Application").mayNotBeAccessedByAnyLayer()
+            .whereLayer("Application").mayOnlyAccessLayers("Domain")
             .whereLayer("Fleet Adapter").mayNotBeAccessedByAnyLayer()
             .whereLayer("StarShip Adapter").mayNotBeAccessedByAnyLayer()
             .whereLayer("Domain").mayOnlyBeAccessedByLayers("Application", "Fleet Adapter", "StarShip Adapter")
