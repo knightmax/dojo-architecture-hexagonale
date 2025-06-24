@@ -12,4 +12,4 @@ logging.level:
 
 starship:
   inventory:
-    url: https://swapi.dev/api
+    url: https://swapi.profiq.com/api
